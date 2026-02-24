@@ -14,7 +14,7 @@ export async function generateSitemaps() {
 }
 
 export default async function sitemap({ id }: { id: string }): Promise<MetadataRoute.Sitemap> {
-    const baseUrl = 'https://xn--c1acbe2apap.com';
+    const baseUrl = 'https://taximezhgorod777.ru';
     const resolvedId = id; // `id` is already resolved by Next.js for dynamic sitemaps
 
     const fromCity = cities.find(c => c.id === resolvedId);

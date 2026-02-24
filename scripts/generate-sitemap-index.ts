@@ -2,7 +2,7 @@ import { cities } from '../src/data/cities';
 import fs from 'fs';
 import path from 'path';
 
-const baseUrl = 'https://межгород.com';
+const baseUrl = 'https://taximezhgorod777.ru';
 
 const generateSitemapIndex = () => {
     const sitemaps = [{ id: 'index' }];
