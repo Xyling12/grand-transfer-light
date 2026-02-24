@@ -1,0 +1,236 @@
+.section {
+    padding: 100px 20px;
+    background: var(--color-background);
+    position: relative;
+    overflow: hidden;
+}
+
+.section::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle, rgba(202, 138, 4, 0.05) 0%, transparent 70%);
+    filter: blur(80px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.headerTitle {
+    text-align: center;
+}
+
+
+.navButtons {
+    display: flex;
+    gap: 12px;
+}
+
+.navBtn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--color-foreground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: var(--glass-blur);
+}
+
+.navBtn:hover {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--color-primary-glow);
+}
+
+.navBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    background: var(--glass-bg);
+    color: var(--color-text-muted);
+    border-color: var(--glass-border);
+    box-shadow: none;
+}
+
+.carouselContainer {
+    position: relative;
+    margin-bottom: 60px;
+    margin: 0 -20px 60px -20px;
+    padding: 0 20px;
+}
+
+.grid {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+    /* Space for shadow */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.grid::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
+
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: 35px;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: default;
+    box-shadow: var(--shadow-card);
+    min-width: 320px;
+    max-width: 400px;
+    flex: 0 0 auto;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-primary);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.quoteIcon {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--color-primary);
+    opacity: 0.1;
+    font-family: 'Bodoni Moda', serif;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(202, 138, 4, 0.2), rgba(234, 179, 8, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    border: 1px solid var(--color-primary);
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.name {
+    font-weight: 700;
+    color: var(--color-foreground);
+    font-size: 1.1rem;
+    font-family: var(--font-heading);
+}
+
+.date {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 15px;
+    color: var(--color-accent);
+}
+
+.text {
+    color: var(--color-foreground);
+    line-height: 1.8;
+    font-style: italic;
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+.actions {
+    text-align: center;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 40px;
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.button:hover {
+    background: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 0 20px var(--color-primary-glow);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .card {
+        min-width: 85vw;
+        max-width: 85vw;
+        padding: 24px;
+    }
+    
+    .quoteIcon {
+        top: 15px;
+        right: 15px;
+        font-size: 3.5rem;
+    }
+    
+    .text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}

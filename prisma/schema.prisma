@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Order {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now())
+  fromCity      String
+  toCity        String
+  tariff        String
+  passengers    Int
+  priceEstimate Float?
+  customerName  String
+  customerPhone String
+  comments      String?
+  status        String   @default("NEW") // NEW, DISPATCHED, TAKEN, COMPLETED, CANCELLED
+  driverId      String?  // ID of the driver who took the order
+  dispatcherId  String?  // ID of the dispatcher who released the order
+}
+
+model Driver {
+  id             String    @id @default(cuid())
+  telegramId     BigInt    @unique
+  username       String?
+  firstName      String?
+  status         String    @default("PENDING") // PENDING, APPROVED, BANNED
+  role           String    @default("DRIVER")  // USER, DRIVER, DISPATCHER, ADMIN
+  // Future subscription
+  subExpiresAt   DateTime? 
+  createdAt      DateTime  @default(now())
+}
+
+model BroadcastMessage {
+  id         Int      @id @default(autoincrement())
+  orderId    Int
+  telegramId BigInt
+  messageId  Int
+  createdAt  DateTime @default(now())
+
+  @@index([orderId])
+}
+
+model BotSettings {
+  id             Int     @id @default(1)
+  protectContent Boolean @default(true)
+}

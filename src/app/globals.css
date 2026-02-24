@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Premium Liquid Glass Palette */
+  --color-background: #0C0A09;
+  /* Deep Rich Black */
+  --color-foreground: #FAFAF9;
+  /* Soft Stone White */
+
+  --color-primary: #CA8A04;
+  /* Premium Gold */
+  --color-primary-hover: #EAB308;
+  /* Brighter Gold */
+  --color-primary-glow: rgba(202, 138, 4, 0.4);
+
+  /* Additional sophisticated gold variables */
+  --color-gold: #cca450;
+  --color-gold-light: #e6c57a;
+  --color-gold-dark: #a37c2b;
+
+  --color-secondary: #1C1917;
+  /* Slate Stone Dark */
+  --color-accent: #EAB308;
+
+  --color-text-muted: #A8A29E;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  /* Glassmorphism Tokens */
+  --glass-bg: rgba(28, 25, 23, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(12px);
+
+  --font-heading: 'Cormorant', 'Georgia', serif;
+  --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 30px var(--color-primary-glow);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--color-foreground);
+  background: var(--color-background);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), #818CF8);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-foreground);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
+}
+
+/* Gradient Text */
+.gold-text {
+  background: linear-gradient(135deg, #6366F1, #818CF8, #A78BFA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scroll Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 {
+  transition-delay: 0.1s;
+}
+
+
+/* Yandex Maps SuggestView UI Fix */
+[class*="suggest-ring"],
+.ymaps-2-1-79-suggest-ring {
+  z-index: 999999 !important;
+}
+
+
+/* ===============================
+   Fixed Header Compensation
+   =============================== */
+
+:root {
+  --header-offset: 112px;
+  /* Desktop header height */
+}
+
+/* Сдвигаем весь контент вниз */
+main {
+  padding-top: var(--header-offset);
+}
+
+/* Если где-то main не применяется */
+body>div {
+  padding-top: var(--header-offset);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-offset: 84px;
+    /* Mobile header height */
+  }
+}

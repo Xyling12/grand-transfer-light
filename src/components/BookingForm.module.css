@@ -1,0 +1,456 @@
+.section {
+    padding: 100px 20px;
+    background: var(--color-background);
+    position: relative;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(202, 138, 4, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.formCard {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: 48px;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    /* Removed overflow: hidden so Yandex SuggestView dropdown is not clipped */
+}
+
+.formCard::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.stepIndicator {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.step {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    border: 1px solid var(--glass-border);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 1rem;
+}
+
+.stepActive {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+    color: #fff;
+    box-shadow: 0 0 20px var(--color-primary-glow);
+    border-color: var(--color-primary);
+    transform: scale(1.1);
+}
+
+.stepCompleted {
+    background: rgba(202, 138, 4, 0.15);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--color-foreground);
+    letter-spacing: -0.01em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.label {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: var(--font-body);
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    position: absolute;
+    left: 20px;
+    color: var(--color-primary);
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.input {
+    width: 100%;
+    padding: 18px 18px 18px 56px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    color: var(--color-foreground);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+}
+
+.input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 15px var(--color-primary-glow);
+}
+
+.input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.tariffGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.tariffCard {
+    background: #000000;
+    /* Match pure black background */
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.tariffCard:hover {
+    background: #1a1a1a;
+    /* Dark gray for hover */
+    border-color: var(--color-primary);
+    transform: translateY(-5px);
+}
+
+.carImageWrapper {
+    background: transparent;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle separator */
+}
+
+.carImage {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    transform: scale(var(--base-scale, 1)) translateY(var(--base-translate, 0));
+}
+
+.tariffCard:hover .carImage {
+    transform: scale(var(--hover-scale, 1.1)) translateY(var(--hover-translate, -2px));
+}
+
+.tariffCardBody {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.tariffName {
+    display: block;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: var(--color-foreground);
+}
+
+.tariffPrice {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.tariffActive {
+    background: rgba(202, 138, 4, 0.1);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 25px var(--color-primary-glow);
+}
+
+.tariffActive .tariffName {
+    color: var(--color-primary);
+}
+
+.checkIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.priceResult {
+    margin-top: 32px;
+    padding: 24px;
+    background: rgba(202, 138, 4, 0.05);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-xl);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.priceResultHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priceResultLabel {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+}
+
+.priceResultTariff {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.priceResultStats {
+    display: flex;
+    gap: 20px;
+}
+
+.priceStat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: var(--color-foreground);
+}
+
+.priceResultTotal {
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+}
+
+.priceResultTotal strong {
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    margin-left: 8px;
+}
+
+.receiptBox {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+}
+
+.receiptTitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.receiptRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    font-size: 0.95rem;
+}
+
+.receiptRow:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.receiptRow span:first-child {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.receiptRow span:last-child {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 1.05rem;
+}
+
+.actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.nextBtn {
+    flex: 1;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+    color: #fff;
+    padding: 18px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nextBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--color-primary-glow);
+}
+
+.backBtn {
+    padding: 18px 30px;
+    border-radius: 50px;
+    border: 1px solid var(--glass-border);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.backBtn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-color: #fff;
+}
+
+
+.suggestions {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    background: #1c1917;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.suggestionItem {
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--color-foreground);
+    font-size: 0.9rem;
+}
+
+.suggestionItem:hover {
+    background: rgba(202, 138, 4, 0.1);
+    color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+    .formCard {
+        padding: 32px 20px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .actions {
+        flex-direction: column-reverse;
+    }
+
+    .backBtn,
+    .nextBtn {
+        width: 100%;
+        padding: 16px;
+    }
+}

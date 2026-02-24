@@ -1,0 +1,47 @@
+{
+  "name": "grand-transfer",
+  "version": "1.1.1",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "tsx scripts/generate-sitemap-index.ts && next build",
+    "start": "next start -H 0.0.0.0",
+    "lint": "eslint",
+    "bot": "tsx scripts/bot.ts",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@pbe/react-yandex-maps": "^1.2.5",
+    "@prisma/client": "^5.22.0",
+    "@types/leaflet": "^1.9.21",
+    "clsx": "^2.1.1",
+    "dotenv": "^17.3.1",
+    "framer-motion": "^12.34.2",
+    "jimp": "^1.6.0",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.575.0",
+    "next": "16.1.6",
+    "nodemailer": "^6.9.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-leaflet": "^5.0.0",
+    "ssh2": "^1.17.0",
+    "telegraf": "^4.16.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/nodemailer": "^6.4.15",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "prisma": "^5.22.0",
+    "sharp": "^0.34.5"
+  }
+}
