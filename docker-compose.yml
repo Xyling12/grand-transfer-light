@@ -6,7 +6,7 @@ services:
     networks:
       - dokploy-network
     volumes:
-      - app_data:/app/prisma
+      - app_data_light:/app/prisma
     environment:
       - DATABASE_URL=file:/app/prisma/dev.db
       - TELEGRAM_BOT_TOKEN=8410817305:AAE6vTlmSuBBWA2Wbwf9_p5wy3QzqF6INz8
@@ -14,8 +14,8 @@ services:
       - EMAIL_PASS=wororvoeoxunilkg
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.site-router.rule=Host(`xn--c1acbe2apap.com`) || Host(`www.xn--c1acbe2apap.com`)"
-      - "traefik.http.services.site-router.loadbalancer.server.port=3000"
+      - "traefik.http.routers.site-router-light.rule=Host(`taximezhgorod777.ru`) || Host(`www.taximezhgorod777.ru`)"
+      - "traefik.http.services.site-router-light.loadbalancer.server.port=3000"
       - "traefik.docker.network=dokploy-network"
 
   bot:
@@ -25,7 +25,7 @@ services:
     networks:
       - dokploy-network
     volumes:
-      - app_data:/app/prisma
+      - app_data_light:/app/prisma
     environment:
       - DATABASE_URL=file:/app/prisma/dev.db
       - TELEGRAM_BOT_TOKEN=8410817305:AAE6vTlmSuBBWA2Wbwf9_p5wy3QzqF6INz8
@@ -36,4 +36,4 @@ networks:
     external: true
 
 volumes:
-  app_data:
+  app_data_light:
