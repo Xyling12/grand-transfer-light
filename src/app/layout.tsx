@@ -20,28 +20,28 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.xn--c1adbj4b9a7c.com'),
-  title: "Междугороднее такси | GrandTransfer",
-  description: "Межгородское такси по всей России и СНГ. Комфорт и безопасность — наш стандарт. Закажите трансфер до границы (КПП) или в другой город.",
-  keywords: "междугороднее такси, такси межгород, заказ такси, комфорт, минивэн, такси граница кпп, трезвый водитель",
+  metadataBase: new URL('https://taximezhgorod777.ru'),
+  title: "Такси Межгород | Заказать такси надежно - Такси 777",
+  description: "Закажите междугороднее такси. Быстрая подача, фиксированные цены от 1200 руб, опытные водители. Эконом и комфорт класс. Звоните!",
+  keywords: "такси межгород, такси межгород недорого, заказ такси, эконом, такси граница кпп, такси 777, межгород",
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    url: "https://www.xn--c1adbj4b9a7c.com",
-    siteName: "GrandTransfer",
-    title: "Такси Межгород | GrandTransfer",
-    description: "Надежные междугородние поездки с фиксированной ценой до любого города или границы. Закажите комфортный трансфер прямо сейчас.",
+    url: "https://taximezhgorod777.ru",
+    siteName: "Такси 777",
+    title: "Такси Межгород | Заказать такси надежно",
+    description: "Надежные междугородние поездки с фиксированной ценой до любого города или границы.",
     images: [{
       url: "/images/og-image.jpg",
       width: 1200,
       height: 630,
-      alt: "Междугороднее такси GrandTransfer"
+      alt: "Междугороднее такси 777"
     }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Такси Межгород | GrandTransfer",
-    description: "Мгновенный расчет стоимости и комфортные поездки по межгороду."
+    title: "Такси Межгород | Заказать такси надежно",
+    description: "Мгновенный расчет стоимости и быстрые поездки по межгороду."
   },
   verification: {
     google: "6jdi0lGUwUYQl-a_LsZFZYz8709GNp18Zed3SohrgvQ",

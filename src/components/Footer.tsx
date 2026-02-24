@@ -25,7 +25,7 @@ export default function Footer() {
                         <div className={styles.socials}>
                             <a href="https://vk.ru/ru.transfer" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="VK"><VKIcon size={20} /></a>
                             <a href="https://t.me/Rom474" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Telegram"><TelegramIcon size={20} /></a>
-                            <a href="https://wa.me/79501587878" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="WhatsApp"><WhatsAppIcon size={20} /></a>
+                            <a href="https://wa.me/79935287878" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="WhatsApp"><WhatsAppIcon size={20} /></a>
                             <a href="https://max.ru/u/f9LHodD0cOJCpX9My7upgEOBL0dt-DNGWgrFFD4IwEdtYkMWb7DJK1v8yOo" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Max"><MaxIcon size={20} /></a>
                         </div>
                     </div>
@@ -58,11 +58,11 @@ export default function Footer() {
                         <div className={styles.links}>
                             <div className={styles.contactItem}>
                                 <Phone size={18} className={styles.contactIcon} />
-                                <span>+7 950 158 7878</span>
+                                <span>+7 993 528 7878</span>
                             </div>
                             <div className={styles.contactItem}>
                                 <Mail size={18} className={styles.contactIcon} />
-                                <span>romanbatkovic1@yandex.ru</span>
+                                <span>romanbatkovic1@gmail.com</span>
                             </div>
                         </div>
                     </div>

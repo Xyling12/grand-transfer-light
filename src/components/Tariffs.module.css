@@ -22,10 +22,9 @@
 }
 
 .card {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-xl);
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     width: 100%;
@@ -36,18 +35,18 @@
 }
 
 .card:hover {
-    transform: translateY(-12px);
+    transform: translateY(-8px);
     border-color: var(--color-primary);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px var(--color-primary-glow);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 0 10px rgba(255, 204, 0, 0.15);
 }
 
 /* Header (Dark part) */
 .cardHeader {
-    background-color: #000000;
-    /* Pure black background for car images */
+    background-color: #FAFAFA;
+    /* Soft light gray background for car images */
     padding: 0;
     text-align: center;
-    color: #fff;
+    color: #111111;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,7 +76,7 @@
     max-height: 100%;
     object-fit: contain;
     transition: transform 0.6s ease;
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
     transform: scale(var(--base-scale, 1)) translateY(var(--base-translate, 0));
 }
 
@@ -89,22 +88,24 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.8) 0%, transparent 100%);
     padding: 24px 25px 20px;
 }
 
 .name {
     font-family: var(--font-heading);
     font-size: 1.75rem;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 5px;
-    color: var(--color-primary);
+    color: #111111;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 1);
 }
 
 .cars {
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
-    font-weight: 400;
+    font-size: 0.9rem;
+    color: #374151;
+    font-weight: 600;
+    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.9);
 }
 
 /* Body (Light part) */
@@ -113,7 +114,7 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.02);
+    background: #FFFFFF;
 }
 
 .headerRow {
@@ -134,7 +135,7 @@
 }
 
 .priceBadge {
-    background: rgba(202, 138, 4, 0.1);
+    background: rgba(255, 204, 0, 0.1);
     color: var(--color-primary);
     padding: 8px 12px;
     border-radius: 20px;
@@ -179,11 +180,11 @@
 .bookButton {
     width: 100%;
     padding: 15px;
-    border: 1px solid var(--color-primary);
-    border-radius: 50px;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-md);
     background: transparent;
-    color: var(--color-primary);
-    font-weight: 700;
+    color: #111111;
+    font-weight: 800;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -193,8 +194,7 @@
 
 .bookButton:hover {
     background: var(--color-primary);
-    color: #fff;
-    box-shadow: 0 0 20px var(--color-primary-glow);
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.2);
     transform: scale(1.02);
 }
 

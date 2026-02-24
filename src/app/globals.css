@@ -1,47 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Premium Liquid Glass Palette */
-  --color-background: #0C0A09;
-  /* Deep Rich Black */
-  --color-foreground: #FAFAF9;
-  /* Soft Stone White */
+  /* Clean Utilitarian Transport Theme */
+  --color-background: #FFFFFF;
+  /* Pure White */
+  --color-foreground: #111111;
+  /* Sharp Dark Text */
 
-  --color-primary: #CA8A04;
-  /* Premium Gold */
-  --color-primary-hover: #EAB308;
-  /* Brighter Gold */
-  --color-primary-glow: rgba(202, 138, 4, 0.4);
+  --color-primary: #FFCC00;
+  /* Signal Taxi Yellow */
+  --color-primary-hover: #E5B800;
+  /* Slightly darker yellow */
+  --color-primary-glow: rgba(255, 204, 0, 0.3);
 
-  /* Additional sophisticated gold variables */
-  --color-gold: #cca450;
-  --color-gold-light: #e6c57a;
-  --color-gold-dark: #a37c2b;
+  /* Deep contrasting dark variables for specific accents */
+  --color-gold: #FFB800;
+  --color-gold-light: #FFD633;
+  --color-gold-dark: #CCA300;
 
-  --color-secondary: #1C1917;
-  /* Slate Stone Dark */
-  --color-accent: #EAB308;
+  --color-secondary: #F3F4F6;
+  /* Light gray for card backgrounds */
+  --color-accent: #111111;
 
-  --color-text-muted: #A8A29E;
-  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text-muted: #6B7280;
+  --color-border: rgba(0, 0, 0, 0.1);
 
-  /* Glassmorphism Tokens */
-  --glass-bg: rgba(28, 25, 23, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-blur: blur(12px);
+  /* Solid Utility Tokens (removed glassmorphism) */
+  --glass-bg: #FFFFFF;
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-blur: blur(0px);
 
-  --font-heading: 'Cormorant', 'Georgia', serif;
-  --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+  --font-heading: 'Outfit', 'Montserrat', sans-serif;
+  --font-body: 'Manrope', 'Helvetica Neue', sans-serif;
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 32px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
 
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
-  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.4);
-  --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 30px var(--color-primary-glow);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 10px 24px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 4px 14px var(--color-primary-glow);
 }
 
 * {
@@ -93,22 +93,24 @@ button {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-primary), #818CF8);
-  color: #fff;
-  padding: 14px 28px;
-  border-radius: 50px;
-  font-weight: 600;
+  background: var(--color-primary);
+  color: #000000;
+  padding: 16px 32px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
   font-family: var(--font-body);
   transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.2);
+  font-size: 1.05rem;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
+  background: var(--color-primary-hover);
+  box-shadow: 0 8px 25px rgba(255, 204, 0, 0.3);
 }
 
 .section-title {
@@ -130,12 +132,9 @@ button {
   line-height: 1.7;
 }
 
-/* Gradient Text */
+/* Solid Brand Text Accent */
 .gold-text {
-  background: linear-gradient(135deg, #6366F1, #818CF8, #A78BFA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #D9A000; /* Darker yellow/gold for readability on white */
 }
 
 /* Reduced Motion */

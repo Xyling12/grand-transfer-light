@@ -1,6 +1,6 @@
 .footer {
-    background: #000000;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: #FFFFFF;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding: 100px 20px 40px;
     margin-top: auto;
     position: relative;
@@ -14,7 +14,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 10% 90%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+    background: radial-gradient(circle at 10% 90%, rgba(255, 204, 0, 0.05) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -41,17 +41,17 @@
 .logo {
     font-family: var(--font-heading);
     font-size: 1.8rem;
-    font-weight: 600;
-    color: var(--color-gold);
+    font-weight: 800;
+    color: var(--color-foreground);
     display: flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 10px;
-    letter-spacing: 0.02em;
+    letter-spacing: 0em;
 }
 
 .description {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-text-muted);
     font-size: 0.95rem;
     line-height: 1.8;
 }
@@ -59,8 +59,8 @@
 .heading {
     font-family: var(--font-heading);
     font-size: 1.25rem;
-    font-weight: 500;
-    color: #ffffff;
+    font-weight: 700;
+    color: var(--color-foreground);
     margin-bottom: 15px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -73,13 +73,13 @@
 }
 
 .link {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-text-muted);
     transition: all 0.3s ease;
     font-size: 0.95rem;
 }
 
 .link:hover {
-    color: var(--color-gold);
+    color: var(--color-primary);
     padding-left: 5px;
 }
 
@@ -87,12 +87,12 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-text-muted);
     font-size: 0.95rem;
 }
 
 .contactIcon {
-    color: var(--color-gold);
+    color: var(--color-primary);
 }
 
 .socials {
@@ -104,26 +104,26 @@
 .socialLink {
     width: 44px;
     height: 44px;
-    background: rgba(255, 255, 255, 0.03);
+    background: #F3F4F6;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    color: var(--color-gold);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--color-foreground);
+    border: 1px solid var(--color-border);
 }
 
 .socialLink:hover {
-    background: var(--color-gold);
-    color: #000;
+    background: var(--color-primary);
+    color: #111111;
     transform: translateY(-5px) rotate(8deg);
-    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
-    border-color: var(--color-gold);
+    box-shadow: 0 5px 20px rgba(255, 204, 0, 0.3);
+    border-color: var(--color-primary);
 }
 
 .bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
@@ -131,17 +131,17 @@
     flex-wrap: wrap;
     gap: 20px;
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-muted);
 }
 
 .disclaimer {
     margin-top: 30px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #F9FAFB;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: var(--radius-lg);
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-muted);
     line-height: 1.8;
     text-align: center;
 }

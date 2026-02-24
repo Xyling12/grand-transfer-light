@@ -9,58 +9,58 @@ const tariffDefs = [
     {
         id: "econom" as keyof CityTariffs,
         name: "Эконом",
-        description: "Для бюджетных поездок налегке. Лучшая цена без потери качества.",
-        image: "/images/tariffs/economy-dark-new.webp?v=3",
-        features: ["Гранта, Логан, Лачетти и аналоги", "Кондиционер", "Детское кресло"]
+        description: "Низкая цена на поездки. Подача авто до 15 минут в черте города.",
+        image: "/images/tariffs/econom_ai.png",
+        features: ["Гранта, Логан, Лачетти", "Отличная цена", "Детское кресло по запросу"]
     },
     {
         id: "standart" as keyof CityTariffs,
         name: "Стандарт",
-        description: "Оптимальный выбор для дальних поездок. Просторный багажник и комфорт.",
-        image: "/images/tariffs/standard-dark-new.webp?v=3",
-        features: ["Рио, Солярис, Поло и аналоги", "Вместительный багажник", "Климат-контроль"]
+        description: "Оптимальный выбор для межгорода. Кондиционер и чистый салон.",
+        image: "/images/tariffs/standard_ai.png",
+        features: ["Рио, Солярис, Поло", "Кондиционер", "Вместительный багажник"]
     },
     {
         id: "comfort" as keyof CityTariffs,
         name: "Комфорт",
-        description: "Автомобили C-класса. Улучшенный комфорт и тишина в салоне.",
-        image: "/images/tariffs/comfort-new.webp?v=3",
+        description: "Автомобили C-класса для комфортных поездок на дальние расстояния.",
+        image: "/images/tariffs/comfort_ai.png",
         features: ["Октавия, Элантра, Церато", "Тихий салон", "Плавный ход"]
     },
     {
         id: "comfortPlus" as keyof CityTariffs,
         name: "Комфорт+",
-        description: "Автомобили D-класса. Просторный салон и премиум удобство.",
-        image: "/images/tariffs/comfort-3d.webp",
-        features: ["К5, Камри и аналоги", "Зарядка телефона", "Мягкая подвеска"]
+        description: "Седаны D-класса. Максимум комфорта для длительных поездок.",
+        image: "/images/tariffs/comfort_plus_ai.png",
+        features: ["К5, Камри, Соната", "Много места сзади", "Мягкая подвеска"]
     },
     {
         id: "business" as keyof CityTariffs,
         name: "Бизнес",
-        description: "Премиум автомобили, кожаный салон, вода, деловой стиль вождения.",
-        image: "/images/tariffs/business-3d.webp",
-        features: ["Мерседес, БМВ, Ауди", "Премиальный сервис", "Дресс-код водителя"]
+        description: "Автомобили премиум-сегмента. Для встреч VIP-гостей и важных поездок.",
+        image: "/images/tariffs/business_ai.png",
+        features: ["Мерседес, БМВ, Ауди", "Кожаный салон", "Вода в салоне"]
     },
     {
         id: "minivan" as keyof CityTariffs,
         name: "Минивэн",
-        description: "Для больших компаний или семьи с багажом. Вместимость до 7-8 человек.",
-        image: "/images/tariffs/minivan-v2.webp",
-        features: ["Карнивал, Старекс и аналоги", "Огромный багажник", "Климат для заднего ряда"]
+        description: "Для больших компаний до 8 человек и объемного багажа.",
+        image: "/images/tariffs/minivan_ai.png",
+        features: ["Карнивал, Старекс", "Огромный багажник", "Климат для заднего ряда"]
     },
     {
         id: "soberDriver" as keyof CityTariffs,
         name: "Трезвый водитель",
-        description: "Наш профессиональный водитель безопасно доставит вас и ваш автомобиль домой.",
-        image: "/images/tariffs/sober-3d.webp",
-        features: ["Опытные профессионалы", "Бережное вождение", "Безопасность авто"]
+        description: "Аккуратно доставим вас и ваш автомобиль домой.",
+        image: "/images/tariffs/sober_ai.png",
+        features: ["Опытные водители", "Аккуратное вождение", "Безопасность"]
     },
     {
         id: "delivery" as keyof CityTariffs,
         name: "Доставка",
-        description: "Быстрая и надежная доставка посылок, документов и малогабаритных грузов.",
-        image: "/images/tariffs/delivery-3d.webp",
-        features: ["От двери до двери", "Гарантия сохранности", "Срочная отправка"]
+        description: "Срочная курьерская доставка документов и посылок.",
+        image: "/images/tariffs/delivery_ai.png",
+        features: ["От двери до двери", "Надежно", "Быстро"]
     }
 ];
 
@@ -77,19 +77,12 @@ export default function Tariffs() {
 
     // Adjust individual scales to visually align cars with different intrinsic bounds
     const getStyleProps = (id: string) => {
-        const props: any = { '--hover-translate': '-10px' };
-        switch (id) {
-            case 'econom': props['--base-scale'] = 1.4; props['--hover-scale'] = 1.5; props['--base-translate'] = '-5px'; break;
-            case 'standart': props['--base-scale'] = 1.0; props['--hover-scale'] = 1.1; props['--base-translate'] = '0px'; break;
-            case 'comfort': props['--base-scale'] = 1.35; props['--hover-scale'] = 1.45; props['--base-translate'] = '0px'; break;
-            case 'comfortPlus': props['--base-scale'] = 1.25; props['--hover-scale'] = 1.35; props['--base-translate'] = '-5px'; break;
-            case 'business': props['--base-scale'] = 1.15; props['--hover-scale'] = 1.25; props['--base-translate'] = '0px'; break;
-            case 'minivan': props['--base-scale'] = 1.45; props['--hover-scale'] = 1.55; props['--base-translate'] = '-5px'; break;
-            case 'soberDriver': props['--base-scale'] = 1.0; props['--hover-scale'] = 1.1; props['--base-translate'] = '0px'; props['--hover-translate'] = '-5px'; break;
-            case 'delivery': props['--base-scale'] = 1.4; props['--hover-scale'] = 1.5; props['--base-translate'] = '-15px'; props['--hover-translate'] = '-20px'; break;
-            default: props['--base-scale'] = 1.25; props['--hover-scale'] = 1.35; props['--base-translate'] = '-5px'; break;
-        }
-        return props as React.CSSProperties;
+        return {
+            '--base-scale': 1.1,
+            '--hover-scale': 1.2,
+            '--base-translate': '0px',
+            '--hover-translate': '-8px'
+        } as React.CSSProperties;
     };
 
     return (

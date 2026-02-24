@@ -1,0 +1,116 @@
+.main {
+    padding: 120px 20px 80px;
+    min-height: 100vh;
+    background-color: var(--color-background);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-foreground);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 60px;
+}
+
+.faqList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faqItem {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faqItem:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.questionButton {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-foreground);
+    transition: background 0.2s ease;
+}
+
+.questionButton:hover {
+    background: #FAFAFA;
+}
+
+.icon {
+    flex-shrink: 0;
+    margin-left: 20px;
+    color: var(--color-primary);
+    transition: transform 0.3s ease;
+}
+
+.iconOpen {
+    transform: rotate(180deg);
+}
+
+.answerWrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+}
+
+.answerWrapperOpen {
+    grid-template-rows: 1fr;
+}
+
+.answerInner {
+    overflow: hidden;
+}
+
+.answer {
+    padding: 0 30px 24px;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 100px 20px 60px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .questionButton {
+        padding: 20px;
+        font-size: 1.05rem;
+    }
+
+    .answer {
+        padding: 0 20px 20px;
+    }
+}

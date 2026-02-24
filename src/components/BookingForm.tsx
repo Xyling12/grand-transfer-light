@@ -2,7 +2,7 @@
 // @ts-nocheck
 
 import { useState, useEffect, useCallback, Suspense } from 'react';
-import { CheckCircle2, ChevronLeft, ChevronRight, Loader2, MessageSquare, MapPin, Users, Route, Ruler, Clock3, Navigation, User, Phone, Calendar, Clock } from 'lucide-react';
+import { Check, CheckCircle2, ChevronLeft, ChevronRight, Loader2, MessageSquare, MapPin, Users, Route, Ruler, Clock3, Navigation, User, Phone, Calendar, Clock } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { useSearchParams } from 'next/navigation';
 import LeafletSuggestInput from './LeafletSuggestInput';
@@ -19,14 +19,14 @@ import { cityTariffs, CityTariffs } from '@/data/tariffs';
 import { checkpoints, requiresCheckpoint } from '@/data/checkpoints';
 
 const TARIFFS = [
-    { id: 'econom', name: 'Эконом', image: '/images/tariffs/economy-3d.webp' },
-    { id: 'standart', name: 'Стандарт', image: '/images/tariffs/standard-3d.webp' },
-    { id: 'comfort', name: 'Комфорт', image: '/images/tariffs/comfort-3d.webp' },
-    { id: 'comfortPlus', name: 'Комфорт+', image: '/images/tariffs/comfort-3d.webp' },
-    { id: 'business', name: 'Бизнес', image: '/images/tariffs/business-3d.webp' },
-    { id: 'minivan', name: 'Минивэн', image: '/images/tariffs/minivan-3d.webp' },
-    { id: 'soberDriver', name: 'Трезвый водитель', image: '/images/tariffs/sober-3d.webp' },
-    { id: 'delivery', name: 'Доставка', image: '/images/tariffs/delivery-3d.webp' },
+    { id: 'econom', name: 'Эконом', image: '/images/tariffs/econom_ai.png' },
+    { id: 'standart', name: 'Стандарт', image: '/images/tariffs/standard_ai.png' },
+    { id: 'comfort', name: 'Комфорт', image: '/images/tariffs/comfort_ai.png' },
+    { id: 'comfortPlus', name: 'Комфорт+', image: '/images/tariffs/comfort_plus_ai.png' },
+    { id: 'business', name: 'Бизнес', image: '/images/tariffs/business_ai.png' },
+    { id: 'minivan', name: 'Минивэн', image: '/images/tariffs/minivan_ai.png' },
+    { id: 'soberDriver', name: 'Трезвый водитель', image: '/images/tariffs/sober_ai.png' },
+    { id: 'delivery', name: 'Доставка', image: '/images/tariffs/delivery_ai.png' },
 ];
 
 function BookingFormContent({ defaultFromCity, defaultToCity }: { defaultFromCity?: string, defaultToCity?: string }) {
@@ -448,17 +448,19 @@ function BookingFormContent({ defaultFromCity, defaultToCity }: { defaultFromCit
                                                         className={`${styles.tariffCard} ${tariff === t.id ? styles.tariffActive : ''}`}
                                                         onClick={() => setTariff(t.id)}
                                                     >
-                                                        {tariff === t.id && <CheckCircle2 size={16} className={styles.checkIcon} />}
+                                                        {tariff === t.id && (
+                                                            <div className={styles.checkIcon}></div>
+                                                        )}
                                                         <div className={styles.carImageWrapper}>
                                                             <img
                                                                 src={t.image}
                                                                 alt={t.name}
                                                                 className={styles.carImage}
                                                                 style={{
-                                                                    '--base-scale': t.id === 'delivery' ? 1.3 : (t.id === 'soberDriver' ? 1 : 1.2),
-                                                                    '--base-translate': t.id === 'delivery' ? '-8px' : (t.id === 'soberDriver' ? '0px' : '-4px'),
-                                                                    '--hover-scale': t.id === 'delivery' ? 1.4 : (t.id === 'soberDriver' ? 1.1 : 1.3),
-                                                                    '--hover-translate': t.id === 'delivery' ? '-12px' : (t.id === 'soberDriver' ? '-2px' : '-6px')
+                                                                    '--base-scale': 1.1,
+                                                                    '--base-translate': '0px',
+                                                                    '--hover-scale': 1.2,
+                                                                    '--hover-translate': '-5px'
                                                                 } as React.CSSProperties}
                                                             />
                                                         </div>

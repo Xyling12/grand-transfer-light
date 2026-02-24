@@ -16,81 +16,56 @@
 }
 
 .card {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    padding: 40px;
-    border-radius: var(--radius-xl);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    cursor: default;
-    box-shadow: var(--shadow-card);
-    position: relative;
-    overflow: hidden;
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right,
-            transparent,
-            rgba(255, 255, 255, 0.05),
-            transparent);
-    transform: skewX(-20deg);
-    transition: all 0.7s ease;
-}
-
-.card:hover::before {
-    left: 200%;
+    align-items: center;
+    text-align: center;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(212, 175, 55, 0.3);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .iconWrapper {
-    width: 60px;
-    height: 60px;
-    background: rgba(212, 175, 55, 0.05);
-    /* Gold tint */
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: var(--radius-lg);
+    width: 72px;
+    height: 72px;
+    /* Very pale yellow background */
+    background: #FFFBF0;
+    /* Primary yellow color for icon */
+    color: #FFCC00;
+    /* Very thin yellow border */
+    border: 2px solid #FFEEA8;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-gold);
-    transition: all 0.4s ease;
-    box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.02);
+    margin-bottom: 24px;
+    transition: transform 0.3s ease;
 }
 
 .card:hover .iconWrapper {
-    background: rgba(212, 175, 55, 0.15);
-    border-color: rgba(212, 175, 55, 0.5);
-    color: var(--color-gold-light);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2), inset 0 0 15px rgba(212, 175, 55, 0.1);
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.05);
 }
 
 .cardTitle {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 12px;
     font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--color-foreground);
-    letter-spacing: 0.02em;
 }
 
 .cardDescription {
-    font-size: 1rem;
-    color: var(--color-text-muted);
-    line-height: 1.7;
+    color: #6B7280;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 @media (max-width: 768px) {

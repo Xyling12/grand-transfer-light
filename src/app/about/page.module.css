@@ -5,28 +5,31 @@
 }
 
 .title {
-    font-family: var(--font-bodoni);
+    font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-foreground);
     margin-bottom: 2rem;
     text-align: center;
 }
 
 .contentBlock {
-    background: rgba(26, 26, 26, 0.4);
-    border: 1px solid var(--glass-border);
+    background: #FFFFFF;
+    border: none;
     border-radius: 16px;
     padding: 2rem;
     margin-bottom: 2rem;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .contentBlock h2 {
     font-size: 1.5rem;
-    color: var(--color-primary);
+    color: var(--color-foreground);
     margin-bottom: 1rem;
-    font-family: var(--font-bodoni);
+    font-family: var(--font-heading);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 8px;
+    display: inline-block;
 }
 
 .contentBlock p {
@@ -56,7 +59,8 @@
 }
 
 .contactCard {
-    background: rgba(0, 0, 0, 0.2);
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
     border-radius: 8px;
     padding: 1.5rem;
     color: var(--color-foreground);

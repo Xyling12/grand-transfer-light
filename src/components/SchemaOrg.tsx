@@ -6,8 +6,8 @@ export default function SchemaOrg() {
         "@type": "TransportationService",
         "name": "GrandTransfer",
         "description": "Межгородское такси и трансфер, где комфорт и безопасность — не опция, а стандарт. Пассажирские перевозки между городами.",
-        "url": "https://grand-transfer.ru", // Replace with actual if known
-        "telephone": "+79501587878",
+        "url": "https://taximezhgorod777.ru", // Replace with actual if known
+        "telephone": "+79935287878",
         "priceRange": "₽",
         "areaServed": {
             "@type": "Country",
@@ -16,7 +16,7 @@ export default function SchemaOrg() {
         "sameAs": [
             "https://vk.ru/ru.transfer",
             "https://t.me/Rom474",
-            "https://wa.me/79501587878"
+            "https://wa.me/79935287878"
         ]
     };
 

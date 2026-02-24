@@ -13,7 +13,7 @@ const NAV_LINKS = [
     { href: '/blog', label: 'Блог' },
     { href: '/#tariffs', label: 'Тарифы' },
     { href: '/#reviews', label: 'Отзывы' },
-    { href: '/#faq', label: 'FAQ' },
+    { href: '/faq', label: 'FAQ' },
 ];
 
 export default function Header() {
@@ -147,7 +147,7 @@ export default function Header() {
                     <div className={styles.socials}>
                         <a href="https://vk.ru/ru.transfer" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="VK"><VKIcon size={18} /></a>
                         <a href="https://t.me/Rom474" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Telegram"><TelegramIcon size={18} /></a>
-                        <a href="https://wa.me/79501587878" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="WhatsApp"><WhatsAppIcon size={18} /></a>
+                        <a href="https://wa.me/79935287878" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="WhatsApp"><WhatsAppIcon size={18} /></a>
                         <a href="https://max.ru/u/f9LHodD0cOJCpX9My7upgEOBL0dt-DNGWgrFFD4IwEdtYkMWb7DJK1v8yOo" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Max"><MaxIcon size={18} /></a>
                     </div>
                     <a href={`tel:${currentCity.phone.replace(/[^\d+]/g, '')}`} className={styles.callBtn} aria-label="Позвонить">
@@ -181,7 +181,7 @@ export default function Header() {
                 <div className={styles.mobileSocials} style={{ transitionDelay: isMobileMenuOpen ? '200ms' : '0ms' }}>
                     <a href="https://vk.ru/ru.transfer" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="VK"><VKIcon size={22} /></a>
                     <a href="https://t.me/Rom474" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Telegram"><TelegramIcon size={22} /></a>
-                    <a href="https://wa.me/79501587878" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="WhatsApp"><WhatsAppIcon size={22} /></a>
+                    <a href="https://wa.me/79935287878" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="WhatsApp"><WhatsAppIcon size={22} /></a>
                     <a href="https://max.ru/u/f9LHodD0cOJCpX9My7upgEOBL0dt-DNGWgrFFD4IwEdtYkMWb7DJK1v8yOo" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Max"><MaxIcon size={22} /></a>
                 </div>
             </div>

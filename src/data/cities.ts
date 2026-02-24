@@ -309,7 +309,7 @@ export const cities: City[] = rawCities.map(city => {
 
     return {
         ...city,
-        phone: "+7 950 158 7878",
+        phone: "+7 993 528 7878",
         popularRoutes: routes.slice(0, 6)
     };
 });

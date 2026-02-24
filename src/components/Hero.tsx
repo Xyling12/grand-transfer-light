@@ -19,22 +19,22 @@ function HeroContent({ defaultToCity }: { defaultToCity?: string }) {
     };
 
     let mainTitle = 'Междугороднее такси';
-    let middleTitle = <>Такси<br />Межгород</>;
+    let middleTitle = <><span>Такси<br />Межгород</span></>;
     let subTitle = `из г. ${currentCity.name}`;
-    let descriptionText = <>Комфортные поездки в любой город. Фиксированная цена.<br />Безопасно, надежно, вовремя.</>;
+    let descriptionText = <>Быстрые поездки в любой город. Дешево и без переплат.<br />Точная подача, опытные водители.</>;
 
     if (defaultToCity) {
         mainTitle = `Такси ${currentCity.name} — ${defaultToCity}`;
         middleTitle = <></>;
         subTitle = '';
-        descriptionText = <>Прямой рейс без пересадок. Фиксированная цена.<br />Выгодный трансфер от двери до двери.</>;
+        descriptionText = <>Прямой рейс без пересадок. Фиксированная цена.<br />Выгодный тариф от подъезда до подъезда.</>;
     } else if (utmCampaign === 'search_border') {
         mainTitle = 'Трансфер до границы';
-        middleTitle = <>Такси<br />до КПП</>;
-        descriptionText = <>Поездки до границы и контрольно-пропускных пунктов.<br />Помощь с багажом. Точный расчет.</>;
+        middleTitle = <><span>Такси<br />до КПП</span></>;
+        descriptionText = <>Поездки до границы и контрольно-пропускных пунктов.<br />Помощь с багажом. Доступные цены.</>;
     } else if (utmCampaign === 'search_general') {
-        mainTitle = 'Премиальный трансфер';
-        descriptionText = <>Чистые авто (Комфорт, Бизнес, Минивэн). Подача вовремя.<br />Точный расчет на сайте.</>;
+        mainTitle = 'Дешевое такси межгород';
+        descriptionText = <>Авто от эконома до минивэна. Подача от 15 минут.<br />Точный расчет на сайте.</>;
     }
 
     return (
@@ -45,17 +45,17 @@ function HeroContent({ defaultToCity }: { defaultToCity?: string }) {
 
             <div className="container">
                 <div className={styles.content}>
-                    <h1 className={`${styles.title} animate-on-scroll`}>
+                    <h1 suppressHydrationWarning className={`${styles.title} animate-on-scroll`}>
                         <span className={styles.titleTop}>{mainTitle}</span>
                         {middleTitle && <span className={styles.titleMiddle}>{middleTitle}</span>}
                         {subTitle && <span className={styles.titleBottom}>{subTitle}</span>}
                     </h1>
 
-                    <p className={`${styles.subtitle} animate-on-scroll delay-100`}>
+                    <p suppressHydrationWarning className={`${styles.subtitle} animate-on-scroll delay-100`}>
                         {descriptionText}
                     </p>
 
-                    <div className={`${styles.actions} animate-on-scroll delay-200`}>
+                    <div suppressHydrationWarning className={`${styles.actions} animate-on-scroll delay-200`}>
                         <button onClick={scrollToBooking} className={styles.primaryBtn}>
                             Рассчитать стоимость <ArrowRight size={20} />
                         </button>

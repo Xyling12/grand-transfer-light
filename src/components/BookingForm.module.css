@@ -12,7 +12,7 @@
     transform: translateX(-50%);
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(202, 138, 4, 0.03) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(255, 204, 0, 0.03) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -42,7 +42,7 @@
     width: 100%;
     height: 100%;
     border-radius: inherit;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, transparent 100%);
     pointer-events: none;
 }
 
@@ -57,27 +57,27 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
+    background: #F3F4F6;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
-    color: var(--color-text-muted);
-    border: 1px solid var(--glass-border);
+    font-weight: 700;
+    color: var(--color-foreground);
+    border: 2px solid var(--glass-border);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     font-size: 1rem;
 }
 
 .stepActive {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
-    color: #fff;
-    box-shadow: 0 0 20px var(--color-primary-glow);
+    background: var(--color-primary);
+    color: #111111;
+    box-shadow: 0 4px 15px var(--color-primary-glow);
     border-color: var(--color-primary);
     transform: scale(1.1);
 }
 
 .stepCompleted {
-    background: rgba(202, 138, 4, 0.15);
+    background: rgba(255, 204, 0, 0.15);
     color: var(--color-primary);
     border-color: var(--color-primary);
 }
@@ -135,25 +135,26 @@
 
 .input {
     width: 100%;
-    padding: 18px 18px 18px 56px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--glass-border);
+    padding: 20px 20px 20px 56px;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     color: var(--color-foreground);
-    font-size: 1rem;
+    font-size: 1.05rem;
+    font-weight: 500;
     transition: all 0.3s ease;
     font-family: var(--font-body);
 }
 
 .input:focus {
     outline: none;
-    background: rgba(255, 255, 255, 0.07);
+    background: #FFFFFF;
     border-color: var(--color-primary);
-    box-shadow: 0 0 15px var(--color-primary-glow);
+    box-shadow: 0 0 0 4px var(--color-primary-glow);
 }
 
 .input::placeholder {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(0, 0, 0, 0.3);
 }
 
 .tariffGrid {
@@ -164,9 +165,8 @@
 }
 
 .tariffCard {
-    background: #000000;
-    /* Match pure black background */
-    border: 1px solid var(--glass-border);
+    background: #FFFFFF;
+    border: 2px solid var(--glass-border);
     border-radius: var(--radius-lg);
     cursor: pointer;
     position: relative;
@@ -177,7 +177,7 @@
 }
 
 .tariffCard:hover {
-    background: #1a1a1a;
+    background: #F9FAFB;
     /* Dark gray for hover */
     border-color: var(--color-primary);
     transform: translateY(-5px);
@@ -190,7 +190,7 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     /* Subtle separator */
 }
 
@@ -228,30 +228,33 @@
 }
 
 .tariffActive {
-    background: rgba(202, 138, 4, 0.1);
+    background: rgba(255, 204, 0, 0.08);
     border-color: var(--color-primary);
-    box-shadow: 0 0 25px var(--color-primary-glow);
+    box-shadow: 0 8px 25px rgba(255, 204, 0, 0.25);
+    transform: translateY(-5px);
 }
 
 .tariffActive .tariffName {
-    color: var(--color-primary);
+    color: #111111;
 }
 
 .checkIcon {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    color: var(--color-primary);
-    background: rgba(255, 255, 255, 0.1);
-    padding: 4px;
+    top: 12px;
+    right: 12px;
+    background: var(--color-primary);
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     z-index: 5;
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.5);
+    border: 3px solid #FFFFFF;
 }
 
 .priceResult {
     margin-top: 32px;
     padding: 24px;
-    background: rgba(202, 138, 4, 0.05);
+    background: rgba(255, 204, 0, 0.05);
     border: 1px solid var(--color-primary);
     border-radius: var(--radius-xl);
     display: flex;
@@ -321,7 +324,7 @@
 .receiptBox {
     margin-top: 20px;
     background: rgba(0, 0, 0, 0.2);
-    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border: 1px dashed var(--color-border);
     border-radius: var(--radius-lg);
     padding: 16px 20px;
 }
@@ -340,7 +343,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
     font-size: 0.95rem;
 }
 
@@ -350,7 +353,7 @@
 }
 
 .receiptRow span:first-child {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .receiptRow span:last-child {
@@ -367,12 +370,12 @@
 
 .nextBtn {
     flex: 1;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
-    color: #fff;
-    padding: 18px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1.05rem;
+    background: var(--color-primary);
+    color: #111111;
+    padding: 20px;
+    border-radius: var(--radius-md);
+    font-weight: 800;
+    font-size: 1.15rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -397,9 +400,9 @@
 }
 
 .backBtn:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-    border-color: #fff;
+    background: rgba(0, 0, 0, 0.05);
+    color: #111111;
+    border-color: #111111;
 }
 
 
@@ -408,7 +411,7 @@
     top: calc(100% + 8px);
     left: 0;
     width: 100%;
-    background: #1c1917;
+    background: #F3F4F6;
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
@@ -421,14 +424,15 @@
     padding: 14px 20px;
     cursor: pointer;
     transition: background 0.2s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     color: var(--color-foreground);
     font-size: 0.9rem;
 }
 
 .suggestionItem:hover {
-    background: rgba(202, 138, 4, 0.1);
-    color: var(--color-primary);
+    background: rgba(255, 204, 0, 0.15);
+    color: var(--color-foreground);
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
