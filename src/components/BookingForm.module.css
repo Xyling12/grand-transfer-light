@@ -285,7 +285,7 @@
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--color-text-muted);
+    color: var(--color-foreground);
 }
 
 .priceResultTariff {
@@ -411,11 +411,11 @@
     top: calc(100% + 8px);
     left: 0;
     width: 100%;
-    background: #F3F4F6;
+    background: #FFFFFF;
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
     max-height: 250px;
     overflow-y: auto;
 }
@@ -425,13 +425,12 @@
     cursor: pointer;
     transition: background 0.2s ease;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    color: var(--color-foreground);
+    color: #111111;
     font-size: 0.9rem;
 }
 
 .suggestionItem:hover {
     background: rgba(255, 204, 0, 0.15);
-    color: var(--color-foreground);
     font-weight: 600;
 }
 
