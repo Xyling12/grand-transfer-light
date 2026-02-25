@@ -10,7 +10,7 @@ function MetrikaPageViewTracker() {
 
     useEffect(() => {
         const url = pathname + searchParams.toString();
-        const metrikaId = 106952983;
+        const metrikaId = 104309593;
 
         // If ym is ready, send a hit on route change
         if (typeof window !== 'undefined' && (window as any).ym) {
@@ -33,7 +33,7 @@ export default function YandexMetrika() {
                    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
                    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-                   ym(106952983, "init", {
+                   ym(104309593, "init", {
                         clickmap:true,
                         trackLinks:true,
                         accurateTrackBounce:true,
@@ -43,7 +43,7 @@ export default function YandexMetrika() {
             </Script>
             <noscript>
                 <div>
-                    <img src="https://mc.yandex.ru/watch/106952983" style={{ position: 'absolute', left: '-9999px' }} alt="" />
+                    <img src="https://mc.yandex.ru/watch/104309593" style={{ position: 'absolute', left: '-9999px' }} alt="" />
                 </div>
             </noscript>
         </Suspense>
