@@ -43,6 +43,11 @@ export const metadata: Metadata = {
     title: "Такси Межгород | Заказать такси надежно",
     description: "Мгновенный расчет стоимости и быстрые поездки по межгороду."
   },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' }
+    ]
+  },
   verification: {
     google: "yIaO8R6k5e6iQ-nkshc6D5BP5O3D6bZEUG7x8Mr_RpM",
     yandex: "4a87d70a322542ad"

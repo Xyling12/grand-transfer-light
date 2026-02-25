@@ -134,7 +134,8 @@ button {
 
 /* Solid Brand Text Accent */
 .gold-text {
-  color: #D9A000; /* Darker yellow/gold for readability on white */
+  color: #D9A000;
+  /* Darker yellow/gold for readability on white */
 }
 
 /* Reduced Motion */
@@ -198,5 +199,16 @@ body>div {
   :root {
     --header-offset: 84px;
     /* Mobile header height */
+  }
+}
+
+/* Animations */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
