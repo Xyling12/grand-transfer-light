@@ -27,4 +27,4 @@ networks:
 volumes:
   app_data_light:
     external: true
-    name: grand-transfer_app_data
+    name: grandtransfer-dark-ygfqlb_app_data
