@@ -19,9 +19,9 @@ model Order {
   customerPhone String
   comments      String?
   status        String   @default("NEW") // NEW, DISPATCHED, TAKEN, COMPLETED, CANCELLED
-  sourceSite    String   @default("taximezhgorod777.ru")
-  driverId      String?  // ID of the driver who took the order
-  dispatcherId  String?  // ID of the dispatcher who released the order
+  sourceSite    String   @default("grand-transfer.com")
+  driverId      String? // ID of the driver who took the order
+  dispatcherId  String? // ID of the dispatcher who released the order
 }
 
 model Driver {
@@ -29,10 +29,14 @@ model Driver {
   telegramId     BigInt    @unique
   username       String?
   firstName      String?
+  phone          String?
+  ptsNumber      String?
+  licensePhotoId String?
+  carPhotoId     String?
   status         String    @default("PENDING") // PENDING, APPROVED, BANNED
-  role           String    @default("DRIVER")  // USER, DRIVER, DISPATCHER, ADMIN
+  role           String    @default("DRIVER") // USER, DRIVER, DISPATCHER, ADMIN
   // Future subscription
-  subExpiresAt   DateTime? 
+  subExpiresAt   DateTime?
   createdAt      DateTime  @default(now())
 }
 
