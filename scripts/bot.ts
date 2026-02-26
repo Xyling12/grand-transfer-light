@@ -934,7 +934,8 @@ bot.action(/^take_work_(\d+)$/, async (ctx) => {
                             inline_keyboard: [
                                 [{ text: '📋 Полная заявка', callback_data: `full_order_${order.id}` }],
                                 [{ text: '📤 Отправить водителям', callback_data: `dispatch_order_${order.id}` }],
-                                [{ text: '🗺 Открыть Яндекс Карты', url: mapLink }]
+                                [{ text: '🗺 Открыть Яндекс Карты', url: mapLink }],
+                                [{ text: '💻 Открыть CRM', url: 'https://xn--c1acbe2apap.com/admin/drivers' }]
                             ]
                         };
 
