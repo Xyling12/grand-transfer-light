@@ -63,7 +63,7 @@ export default function Header() {
                         <div style={{ transform: "scaleX(-1)", display: "flex", alignItems: "center", justifyContent: "center", marginRight: "-2px" }}>
                             <Car size={28} strokeWidth={1.5} />
                         </div>
-                        <span className={styles.logoText}>GrandTransfer</span>
+                        <span className={styles.logoText}>Такси 777</span>
                     </a>
 
                     {/* City Selector */}

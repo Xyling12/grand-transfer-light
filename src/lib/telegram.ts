@@ -187,7 +187,7 @@ export async function getStatsMessage() {
     recentOrders.forEach((o: any) => recentRevenue += (o.priceEstimate || 0));
 
     return `
-📊 <b>Статистика GrandTransfer</b>
+📊 <b>Статистика Такси 777</b>
 ────────────────
 <b>За всё время:</b>
 ✅ Заявок оформлено: ${totalOrders}

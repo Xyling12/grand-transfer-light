@@ -103,7 +103,7 @@ export default function Tariffs() {
                                 "description": t.description,
                                 "provider": {
                                     "@type": "Organization",
-                                    "name": "GrandTransfer"
+                                    "name": "Такси 777"
                                 },
                                 "offers": {
                                     "@type": "Offer",

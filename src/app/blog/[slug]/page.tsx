@@ -27,13 +27,16 @@ export async function generateMetadata(
     const post = getBlogPostById(params.slug);
 
     if (!post) {
-        return { title: 'Статья не найдена | GrandTransfer' }
+        return { title: 'Статья не найдена | Такси 777' }
     }
 
     return {
-        title: `${post.title} | Блог GrandTransfer`,
+        title: `${post.title} | Блог Такси 777`,
         description: post.description,
         keywords: post.seoKeywords,
+        alternates: {
+            canonical: `https://taximezhgorod777.ru/blog/${params.slug}`,
+        },
         openGraph: {
             title: post.title,
             description: post.description,
@@ -58,23 +61,23 @@ export default async function BlogPostPage(props: Props) {
         "@type": "Article",
         "headline": post.title,
         "description": post.description,
-        "image": `https://xn--c1acbe2apap.com${post.imageUrl}`,
+        "image": `https://taximezhgorod777.ru${post.imageUrl}`,
         "author": {
             "@type": "Organization",
             "name": post.author
         },
         "publisher": {
             "@type": "Organization",
-            "name": "GrandTransfer",
+            "name": "Такси 777",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://xn--c1acbe2apap.com/icon.png"
+                "url": "https://taximezhgorod777.ru/favicon.svg"
             }
         },
         "datePublished": post.date,
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://xn--c1acbe2apap.com/blog/${post.id}`
+            "@id": `https://taximezhgorod777.ru/blog/${post.id}`
         }
     };
 

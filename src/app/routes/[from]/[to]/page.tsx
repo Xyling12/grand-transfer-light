@@ -43,7 +43,7 @@ export async function generateMetadata(
     const toCity = cities.find(c => c.id === toId);
 
     if (!fromCity || !toCity) {
-        return { title: 'Маршрут не найден | GrandTransfer' }
+        return { title: 'Маршрут не найден | Такси 777' }
     }
 
     const { roadDist, price } = getRouteDetails(fromCity.lat, fromCity.lon, toCity.lat, toCity.lon);
@@ -108,7 +108,7 @@ export default async function RoutePage(props: Props) {
         "name": `Междугороднее такси ${fromCity.name} — ${toCity.name}`,
         "provider": {
             "@type": "LocalBusiness",
-            "name": "GrandTransfer"
+            "name": "Такси 777"
         },
         "areaServed": [
             { "@type": "City", "name": fromCity.name },
@@ -119,7 +119,7 @@ export default async function RoutePage(props: Props) {
             "priceCurrency": "RUB",
             "price": price,
             "availability": "https://schema.org/InStock",
-            "url": `https://xn--c1adbj4b9a7c.com/routes/${fromCity.id}/${toCity.id}`
+            "url": `https://taximezhgorod777.ru/routes/${fromCity.id}/${toCity.id}`
         }
     };
 
@@ -132,13 +132,13 @@ export default async function RoutePage(props: Props) {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Главная",
-                "item": "https://xn--c1adbj4b9a7c.com"
+                "item": "https://taximezhgorod777.ru"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": `Такси из ${fromCity.namePrepositional}`,
-                "item": `https://xn--c1adbj4b9a7c.com/#booking-form`
+                "item": `https://taximezhgorod777.ru/#booking-form`
             },
             {
                 "@type": "ListItem",
@@ -223,7 +223,7 @@ export default async function RoutePage(props: Props) {
 
                 <p style={{ maxWidth: '800px', margin: '0 auto', color: 'var(--color-text-muted)', lineHeight: 1.7, fontSize: '1.1rem' }}>
                     Планируете поездку из <strong>{fromCity.namePrepositional}</strong> в <strong>{toCity.name}</strong>?
-                    Сервис междугородних перевозок GrandTransfer предоставляет надежные автомобили классов Комфорт, Бизнес и вместительные Минивэны для больших компаний.
+                    Сервис междугородних перевозок Такси 777 предоставляет надежные автомобили классов Комфорт, Бизнес и вместительные Минивэны для больших компаний.
                     Вам не придется искать попутчиков или ехать с пересадками на автобусах. Мы заберем вас прямо от подъезда дома или терминала аэропорта и доставим до конечного пункта с максимальным комфортом. Опытные водители, фиксированная стоимость без скрытых доплат и выдача чеков для отчетности.
                 </p>
             </section>

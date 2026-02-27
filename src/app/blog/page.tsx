@@ -21,7 +21,7 @@ export default function BlogIndex() {
             <div className={styles.main}>
                 <div className="container" style={{ paddingTop: '100px', paddingBottom: '60px' }}>
                     <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                        <h1 className={styles.title}>Блог GrandTransfer</h1>
+                        <h1 className={styles.title}>Блог Такси 777</h1>
                         <p style={{ color: 'var(--color-text-muted)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
                             Полезные статьи, советы и актуальная информация о междугородних пассажирских перевозках.
                         </p>

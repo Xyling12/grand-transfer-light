@@ -16,7 +16,7 @@ export default function Footer() {
                     <div className={styles.column}>
                         <Link href="/" className={styles.logo}>
                             <Car size={24} />
-                            GrandTransfer
+                            Такси 777
                         </Link>
                         <p className={styles.description}>
                             Ваш надежный партнер в междугородних поездках. Комфорт бизнес-класса по доступным ценам.
@@ -62,14 +62,14 @@ export default function Footer() {
                             </div>
                             <div className={styles.contactItem}>
                                 <Mail size={18} className={styles.contactIcon} />
-                                <span>romanbatkovic1@gmail.com</span>
+                                <span>romanbatkovic1@yandex.ru</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div className={styles.bottom}>
-                    <p>© {new Date().getFullYear()} GrandTransfer. Все права защищены.</p>
+                    <p>© {new Date().getFullYear()} Такси 777. Все права защищены.</p>
                     <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap', justifyContent: 'center' }}>
                         <Link href="/privacy" className={styles.link}>Политика конфиденциальности</Link>
                         <Link href="/terms" className={styles.link}>Пользовательское соглашение</Link>
