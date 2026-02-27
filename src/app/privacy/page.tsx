@@ -3,8 +3,11 @@ import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 
 export const metadata = {
-    title: 'Политика обработки персональных данных | Grand Transfer',
-    description: 'Соглашение об обработке персональных данных согласно ФЗ-152'
+    title: 'Политика обработки персональных данных | Такси 777',
+    description: 'Соглашение об обработке персональных данных согласно ФЗ-152',
+    alternates: {
+        canonical: 'https://taximezhgorod777.ru/privacy',
+    },
 };
 
 export default function PrivacyPage() {

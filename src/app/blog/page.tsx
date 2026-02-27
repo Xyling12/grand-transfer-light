@@ -6,9 +6,12 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata = {
-    title: 'Блог о пассажирских перевозках | GrandTransfer',
+    title: 'Блог о пассажирских перевозках | Такси 777',
     description: 'Полезные статьи о правилах поездок на междугороднем такси, советы туристам, перевозка животных и выбор тарифов.',
-    keywords: 'блог такси, правила такси межгород, статьи пассажирские перевозки'
+    keywords: 'блог такси, правила такси межгород, статьи пассажирские перевозки',
+    alternates: {
+        canonical: 'https://taximezhgorod777.ru/blog',
+    },
 };
 
 export default function BlogIndex() {

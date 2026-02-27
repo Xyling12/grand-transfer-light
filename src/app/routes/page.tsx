@@ -6,8 +6,11 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-    title: 'Все междугородние маршруты по России | GrandTransfer',
+    title: 'Все междугородние маршруты по России | Такси 777',
     description: 'Полный список маршрутов междугороднего такси по России. Выберите город отправления и прибытия для точного расчёта стоимости и заказа комфортного трансфера.',
+    alternates: {
+        canonical: 'https://taximezhgorod777.ru/routes',
+    },
 };
 
 export default function RoutesHubPage() {

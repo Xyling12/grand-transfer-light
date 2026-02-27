@@ -2,8 +2,11 @@ import styles from '../privacy/page.module.css';
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'Условия использования | GrandTransfer',
-    description: 'Пользовательское соглашение и условия предоставления услуг междугороднего такси GrandTransfer.',
+    title: 'Условия использования | Такси 777',
+    description: 'Пользовательское соглашение и условия предоставления услуг междугороднего такси.',
+    alternates: {
+        canonical: 'https://taximezhgorod777.ru/terms',
+    },
 };
 
 export default function TermsOfService() {

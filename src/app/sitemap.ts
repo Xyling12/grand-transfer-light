@@ -29,6 +29,30 @@ export default async function sitemap({ id }: { id: string }): Promise<MetadataR
             priority: 1,
         });
         routes.push({
+            url: `${baseUrl}/about`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        });
+        routes.push({
+            url: `${baseUrl}/faq`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        });
+        routes.push({
+            url: `${baseUrl}/routes`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
+        });
+        routes.push({
+            url: `${baseUrl}/terms`,
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.2,
+        });
+        routes.push({
             url: `${baseUrl}/privacy`,
             lastModified: new Date(),
             changeFrequency: 'yearly',

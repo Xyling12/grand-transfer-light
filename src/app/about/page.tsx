@@ -7,6 +7,9 @@ import Footer from '@/components/Footer';
 export const metadata = {
     title: 'О компании | Такси Межгород',
     description: 'Информация о сервисе междугородних поездок Такси Межгород. Наши гарантии, автопарк, контакты и юридическая информация.',
+    alternates: {
+        canonical: 'https://taximezhgorod777.ru/about',
+    },
 };
 
 export default function AboutPage() {
@@ -67,11 +70,10 @@ export default function AboutPage() {
                             <p><strong>Вид деятельности:</strong> Водитель (Оказание транспортно-информационных услуг)</p>
                             <p><strong>ФИО:</strong> ПАНКРАТОВ РОМАН БОРИСОВИЧ</p>
                             <p><strong>ИНН:</strong> 500107263479</p>
-                            <p><strong>СНИЛС:</strong> 113-486-079 48</p>
                             <p><strong>Регион деятельности:</strong> Удмуртская Республика, территория РФ и СНГ</p>
                             <hr style={{ margin: '15px 0', borderColor: 'var(--glass-border)' }} />
                             <p><strong>Телефон:</strong> <a href="tel:+79935287878">+7 (993) 528-78-78</a></p>
-                            <p><strong>Email:</strong> <a href="mailto:romanbatkovic1@gmail.com">romanbatkovic1@gmail.com</a></p>
+                            <p><strong>Email:</strong> <a href="mailto:romanbatkovic1@yandex.ru">romanbatkovic1@yandex.ru</a></p>
                             <p><strong>Режим работы:</strong> Круглосуточно, 24/7</p>
                         </div>
                     </section>
