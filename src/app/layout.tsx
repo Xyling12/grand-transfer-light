@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Jost } from "next/font/google";
+import { Bodoni_Moda, Outfit, Manrope } from "next/font/google";
 import "./globals.css";
 import { CityProvider } from "@/context/CityContext";
 import ScrollAnimation from "@/components/ScrollAnimation";
@@ -8,14 +8,21 @@ import SchemaOrg from "@/components/SchemaOrg";
 const bodoni = Bodoni_Moda({
   variable: "--font-bodoni",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
-const jost = Jost({
-  variable: "--font-jost",
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin", "cyrillic"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -67,7 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${bodoni.variable} ${jost.variable} `}>
+      <body className={`${outfit.variable} ${manrope.variable} ${bodoni.variable}`}>
         <SchemaOrg />
         <YandexMetrika />
         <CookieBanner />

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
-
 :root {
   /* Clean Utilitarian Transport Theme */
   --color-background: #FFFFFF;
@@ -30,8 +28,8 @@
   --glass-border: rgba(0, 0, 0, 0.1);
   --glass-blur: blur(0px);
 
-  --font-heading: 'Outfit', 'Montserrat', sans-serif;
-  --font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+  --font-heading: var(--font-outfit), 'Montserrat', sans-serif;
+  --font-body: var(--font-manrope), 'Helvetica Neue', sans-serif;
 
   --radius-sm: 4px;
   --radius-md: 8px;
