@@ -304,8 +304,12 @@ bot.hears('🚗 Мои заказы', async (ctx) => {
         myOrders.forEach((o: any) => {
             const dateStr = o.createdAt ? new Date(o.createdAt).toLocaleString('ru-RU') : '';
 
-            const fromCityObj = cities.find(c => c.name.toLowerCase() === o.fromCity.toLowerCase());
-            const toCityObj = cities.find(c => c.name.toLowerCase() === o.toCity.toLowerCase());
+            const fromLower = o.fromCity.toLowerCase();
+            const toLower = o.toCity.toLowerCase();
+            const fromCityObj = cities.find(c => c.name.toLowerCase() === fromLower)
+                ?? cities.find(c => fromLower.includes(c.name.toLowerCase()) && c.name.length > 3);
+            const toCityObj = cities.find(c => c.name.toLowerCase() === toLower)
+                ?? cities.find(c => toLower.includes(c.name.toLowerCase()) && c.name.length > 3);
 
             const pt1 = fromCityObj ? `${fromCityObj.lat},${fromCityObj.lon}` : encodeURIComponent(o.fromCity);
             const pt2 = toCityObj ? `${toCityObj.lat},${toCityObj.lon}` : encodeURIComponent(o.toCity);
@@ -796,8 +800,12 @@ bot.action(/^dispatch_order_(\d+)$/, async (ctx) => {
         await ctx.answerCbQuery('Заявка отправлена водителям!', { show_alert: true });
 
         // Build the restricted message for Drivers (No Name, No Phone)
-        const fromCityObj = cities.find(c => c.name.toLowerCase() === order.fromCity.toLowerCase());
-        const toCityObj = cities.find(c => c.name.toLowerCase() === order.toCity.toLowerCase());
+        const fromLower = order.fromCity.toLowerCase();
+        const toLower = order.toCity.toLowerCase();
+        const fromCityObj = cities.find(c => c.name.toLowerCase() === fromLower)
+            ?? cities.find(c => fromLower.includes(c.name.toLowerCase()) && c.name.length > 3);
+        const toCityObj = cities.find(c => c.name.toLowerCase() === toLower)
+            ?? cities.find(c => toLower.includes(c.name.toLowerCase()) && c.name.length > 3);
         const pt1 = fromCityObj ? `${fromCityObj.lat},${fromCityObj.lon}` : encodeURIComponent(order.fromCity);
         const pt2 = toCityObj ? `${toCityObj.lat},${toCityObj.lon}` : encodeURIComponent(order.toCity);
         const mapLink = `https://yandex.ru/maps/?mode=routes&rtt=auto&rtext=${pt1}~${pt2}`;
@@ -907,8 +915,12 @@ bot.action(/^take_work_(\d+)$/, async (ctx) => {
                     // Note: Telegraf doesn't have an easy way to GET message text, so we assume standard text and just overwrite reply markup
                     // Or we just send a new text to replace it - simplest approach is to construct it again or append
 
-                    const fromCityObj = cities.find(c => c.name.toLowerCase() === order.fromCity.toLowerCase());
-                    const toCityObj = cities.find(c => c.name.toLowerCase() === order.toCity.toLowerCase());
+                    const fromLower2 = order.fromCity.toLowerCase();
+                    const toLower2 = order.toCity.toLowerCase();
+                    const fromCityObj = cities.find(c => c.name.toLowerCase() === fromLower2)
+                        ?? cities.find(c => fromLower2.includes(c.name.toLowerCase()) && c.name.length > 3);
+                    const toCityObj = cities.find(c => c.name.toLowerCase() === toLower2)
+                        ?? cities.find(c => toLower2.includes(c.name.toLowerCase()) && c.name.length > 3);
                     const pt1 = fromCityObj ? `${fromCityObj.lat},${fromCityObj.lon}` : encodeURIComponent(order.fromCity);
                     const pt2 = toCityObj ? `${toCityObj.lat},${toCityObj.lon}` : encodeURIComponent(order.toCity);
                     const mapLink = `https://yandex.ru/maps/?mode=routes&rtt=auto&rtext=${pt1}~${pt2}`;
