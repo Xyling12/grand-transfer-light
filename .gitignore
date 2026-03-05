@@ -44,3 +44,9 @@ next-env.d.ts
 *.db
 *.sqlite
 dev.db
+
+# temp / build artifacts
+*.tar.gz
+*.tgz
+response.txt
+*.bat
