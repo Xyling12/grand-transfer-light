@@ -51,7 +51,10 @@ export async function generateMetadata(
     return {
         title: `Такси ${fromCity.name} - ${toCity.name} | От ${price} ₽ | Трансфер, Минивэн`,
         description: `Закажите междугороднее такси ${fromCity.name} — ${toCity.name}. Дистанция ~${roadDist} км. Фиксированная цена от ${price} руб. Поездки с детьми, животными, комфортные минивэны и микроавтобусы.`,
-        keywords: `такси ${fromCity.name} ${toCity.name}, трансфер ${fromCity.name} ${toCity.name}, междугороднее такси ${fromCity.name} ${toCity.name}, минивэн ${fromCity.name} ${toCity.name}, с детьми, с животными, цена`
+        keywords: `такси ${fromCity.name} ${toCity.name}, трансфер ${fromCity.name} ${toCity.name}, междугороднее такси ${fromCity.name} ${toCity.name}, минивэн ${fromCity.name} ${toCity.name}, с детьми, с животными, цена`,
+        alternates: {
+            canonical: `https://taximezhgorod777.ru/routes/${fromId}/${toId}`,
+        },
     };
 }
 
