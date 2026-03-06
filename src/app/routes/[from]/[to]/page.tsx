@@ -141,12 +141,13 @@ export default async function RoutePage(props: Props) {
                 "@type": "ListItem",
                 "position": 2,
                 "name": `Такси из ${fromCity.namePrepositional}`,
-                "item": `https://taximezhgorod777.ru/#booking-form`
+                "item": `https://taximezhgorod777.ru/routes`
             },
             {
                 "@type": "ListItem",
                 "position": 3,
-                "name": `${toCity.name}`
+                "name": `${fromCity.name} — ${toCity.name}`,
+                "item": `https://taximezhgorod777.ru/routes/${fromCity.id}/${toCity.id}`
             }
         ]
     };
