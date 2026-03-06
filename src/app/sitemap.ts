@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     routes.push({ url: `${baseUrl}/tarify`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 });
     routes.push({ url: `${baseUrl}/kontakty`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 });
     routes.push({ url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.2 });
+    routes.push({ url: `${baseUrl}/oferta`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 });
     routes.push({ url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.1 });
 
     // ── Blog ─────────────────────────────────────────────────────────────────
